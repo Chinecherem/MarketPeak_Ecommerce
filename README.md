@@ -1,6 +1,6 @@
 #1.1 Version Control
 - Created a directory "MarketPeak_Ecommerce" and initialized a git repository inside the directory to manage the version control.
-- To cretae directory and initialize directory:
+  #command to cretae directory and initialize directory:
   
   ```bash
 mkdir MarketPeak_Ecommerce
