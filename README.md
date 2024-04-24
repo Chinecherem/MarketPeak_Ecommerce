@@ -1,61 +1,63 @@
-1.1 # Version Control
-Created a directory "MarketPeak_Ecommerce" and initialized a git repository inside the directory to manage the version control.
-#Command to cretae directory and initialize
+# 1.1 Version Control
+- Created a directory "MarketPeak_Ecommerce" and initialized a git repository inside the directory to manage the version control.
+To cretae directory and initialize directory:
   ```bash
 mkdir MarketPeak_Ecommerce
 cd MarketPeak_Ecommerce
 git init
 ```
 
-1.2 #Download and prepare E-commerce template
-Downloaded the Ecommerce template from this site: https://www.tooplate.com/view/2130-waso-strategy
-Extract the folder into the "MarketPeak_Ecommerce folder created above.
-Did some little customization on the template like changing the title, display text on the welcome page to suit my E-commerce website.
+# 1.2 Download and prepare E-commerce template
+- Downloaded the Ecommerce template from this site: https://www.tooplate.com/view/2130-waso-strategy.
+- Extracted the folder into the "MarketPeak_Ecommerce folder created above.
+- Did some little customization on the template like changing the title, display text on the welcome page to suit my E-commerce website.
 
-1.3 #Staged and Commit Template to Git
+# 1.3 Staged and Commit Template to Git
 I staged the template and customizations to git using the "git.add ." command.
 I set up some configurations on git to enable me track my changes using the "git config --global" command.
       git config --global user.name "[myUserName]"
       git config --global user.email "[myEmail]"
 
-     Run: git commit -m "Intial commit ecommerce structure" command to commit the staged changes to Git.
-I created a remote repository "MarketPeak_Ecommerce" on GitHub and Linked the local repository to it using this command:
+     Ran: git commit -m "Intial commit ecommerce structure" command to commit the staged changes to Git.
+- Created a remote repository "MarketPeak_Ecommerce" on GitHub and Linked the local repository to it using this command:
   git remote add origin https://github.com/Chinecherem/MarketPeak_Ecommerce.git.
 
 I pushed the code to github main branch using "git push -u origin main" command.
 
-#2.1. Set Up an AWS EC2 Instance
-I logged into the AWS Management Console and lunched an AMzon Linux AMI. 
+# 2.1. Set Up an AWS EC2 Instance
+I logged into the AWS Management Console and lunched an Amazon Linux AMI. 
 Connected to the instance on my terminal and cloned the repository on the Linux server using SSH.
 
 On my EC2 instance, I generated the ssh key using:
   ssh-keygen
-Access the generated public key using: 
+Accessed the generated public key using: 
     cat /home/ubuntu/.ssh/id_rsa.pub  #display and copy the generated key from this directed
 
-Go back to github account, under setting, selected "SSH and GPS keys. 
-Click on new SSH key, entered a name and pasted the SSH public key I copied above.
+- Went back to github account, under setting, selected "SSH and GPS keys. 
+Clicked on new SSH key, entered a name and pasted the SSH public key I copied above.
 
-git clone git@github.com:Chinecherem/MarketPeak_Ecommerce.git to clone the repository.
+git clone git@github.com:Chinecherem/MarketPeak_Ecommerce.git: To clone the repository.
 
-#Install a webserver on EC2
-Install Apache2 web server on the EC2 instance using the below command
-  sudo apt update
-  sudo apt install apeche2
+# Install a webserver on EC2
+
+- Installed Apache2 web server on the EC2 instance using the below command
+    sudo apt update
+    sudo apt install apeche2
 When the installation was completed, I cd into the default folder created by apeche; /var/www/html
 Check the status of the apache web server using "sudo service apache2 status" command. This is to ensure if the server started automatically.
+If the server didn't show an active flag, I will run "sudo service apache2 start" to start the server.
 
-#Configured apache for website.
-Did an ls in the default folder shows the index.html file that contains the Apache2 default page.
+# Configured apache for website.
+- Did an ls in the default folder shows the index.html file that contains the Apache2 default page.
 - Cleared the contents of the default /var/www/html folder and copy the "MarketPeak_Ecommerce" website into it.
       sudo rm -rf /var/www/html/*
-      sudo cp -r ~/MarketPeak_Ecommerce/* /var/www/html/
+      sudo cp -r ~/MarketPeak_Ecommerce/*  /var/www/html/
 
 - Applied the changes by reloading the apache2 service
     sudo service reload apache2
 
-#Access Website from the browser.
-Copied the public IP on the EC2 instance to view the deployed website.
+# Access Website from the browser.
+-Copied the public IP on the EC2 instance to view the deployed website.
 
 For continuous Integration and Development workflow, develop new Features and Fixes.
 - Create a development branch from the main branch to isolate new features and bug fixes from the stable version of the website.
