@@ -1,28 +1,26 @@
-#1.1 Version Control
+# 1.1 Version Control
 - Created a directory "MarketPeak_Ecommerce" and initialized a git repository inside the directory to manage the version control.
 - To cretae directory and initialize directory:
-  ```bash
+  
 mkdir MarketPeak_Ecommerce
 cd MarketPeak_Ecommerce
 git init
-```
 
-#1.2 Download and prepare E-commerce template
+
+# 1.2 Download and prepare E-commerce template
 - Downloaded the Ecommerce template from this site: https://www.tooplate.com/view/2130-waso-strategy.
 - Extracted the folder into the "MarketPeak_Ecommerce folder created above.
 - Did some little customization on the template like changing the title, display text on the welcome page to suit my E-commerce website.
 
-#1.3 Staged and Commit Template to Git
+# 1.3 Staged and Commit Template to Git
 I staged the template and customizations to git using the "git.add ." command.
 I set up some configurations on git to enable me track my changes using the "git config --global" command.
 
-    ```bash
-git config --global user.name "YourUserName"
-git config --global user.email "YourEmail"
-```
 
+git config --global user.name "[myuserName]"
+git config --global user.email "[myEmail]"
+git commit -m "Intial commit ecommerce structure" command to commit the staged changes to Git.
 
-     Ran: git commit -m "Intial commit ecommerce structure" command to commit the staged changes to Git.
 - Created a remote repository "MarketPeak_Ecommerce" on GitHub and Linked the local repository to it using this command:
   git remote add origin https://github.com/Chinecherem/MarketPeak_Ecommerce.git.
 
@@ -47,6 +45,7 @@ git clone git@github.com:Chinecherem/MarketPeak_Ecommerce.git: To clone the repo
 - Installed Apache2 web server on the EC2 instance using the below command
     sudo apt update
     sudo apt install apeche2
+  
 When the installation was completed, I cd into the default folder created by apeche; /var/www/html
 Check the status of the apache web server using "sudo service apache2 status" command. This is to ensure if the server started automatically.
 If the server didn't show an active flag, I will run "sudo service apache2 start" to start the server.
