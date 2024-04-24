@@ -1,4 +1,4 @@
-1.1 #Version Control
+#1.1 Version Control
 - Created a directory "MarketPeak_Ecommerce" and initialized a git repository inside the directory to manage the version control.
 - To cretae directory and initialize directory:
   ```bash
@@ -15,10 +15,12 @@ git init
 #1.3 Staged and Commit Template to Git
 I staged the template and customizations to git using the "git.add ." command.
 I set up some configurations on git to enable me track my changes using the "git config --global" command.
- ```bash
-    git config --global user.name "YourUserName"
-    git config --global user.email "YourEmail"
+
+    ```bash
+git config --global user.name "YourUserName"
+git config --global user.email "YourEmail"
 ```
+
 
      Ran: git commit -m "Intial commit ecommerce structure" command to commit the staged changes to Git.
 - Created a remote repository "MarketPeak_Ecommerce" on GitHub and Linked the local repository to it using this command:
