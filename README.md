@@ -2,9 +2,11 @@
 - Created a directory "MarketPeak_Ecommerce" and initialized a git repository inside the directory to manage the version control.
 - To cretae directory and initialize directory:
   
-mkdir MarketPeak_Ecommerce
-cd MarketPeak_Ecommerce
-git init
+```java
+    mkdir MarketPeak_Ecommerce
+    cd MarketPeak_Ecommerce
+    git init
+```
 
 
 # 1.2 Download and prepare E-commerce template
@@ -26,7 +28,11 @@ I logged into the AWS Management Console and lunched an Amazon Linux AMI.
 Connected to the instance on my terminal and cloned the repository on the Linux server using SSH.
 
 On my EC2 instance, I generated the ssh key using:
-  * ssh-keygen
+
+ ```java
+   ssh-keygen
+ ```
+
 - Accessed the generated public key using: 
     cat /home/ubuntu/.ssh/id_rsa.pub  #display and copy the generated key from this directed
 
@@ -79,12 +85,16 @@ For continuous Integration and Development workflow, develop new Features and Fi
 
   Also, can merge the developmet into the remote main branch on Github then on the local terminal;
 
+ ```java
         git checkout main
         git pull origin main: To merge the changes into the local repository.
+ ```
 
 - Restarted the apache server to apply the changes.
 
+ ```java
     sudo service reload apache2
+ ```
   
 - Accessed the webserver on the broswer to view my changes.
 
